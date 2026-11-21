@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pol-eat-heck | Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+  <a href="index.html">Pol-eat-heck</a>
+
+  <nav>
+    <ul>
+      <li><a href="menus.html">Menus</a></li>
+      <li><a href="products.html">Produits</a></li>
+    </ul>
+  </nav>
+</header>
+<section>
+  <h2>Connexion</h2>
+  <form id="login-form">
+    <label for="login-username">Nom d'utilisateur</label>
+    <input type="text" id="login-username" required> <!-- the required attribute blocks the user from sending the form if the field isn't completed. not really secure beccause it can be removed w f12-->
+
+    <label for="login-password">Mot de passe</label>
+    <input type="password" id="login-password" required>
+
+    <button type="submit">Se connecter</button>
+  </form>
+  <p id="login-error"></p>
+</section>
+
+<section>
+  <h2>Créer un compte</h2>
+  <form id="register-form">
+    <label for="register-username">Nom d'utilisateur</label>
+    <input type="text" id="register-username" maxlength="50" required>
+
+    <button type="submit">Créer un compte</button>
+  </form>
+  <p id="register-error"></p>
+
+  <div id="register-result" hidden>
+    <p>Le compte a correctement été créé. Vous pouvez vous connecter avec le mot de passe suivant (affiché seulement maintenant !) :</p>
+    <strong id="generated-password"></strong>
+    <!-- in the future : add copy button -->
+  </div>
+</section>
+</body>
+</html>
