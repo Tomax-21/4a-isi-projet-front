@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pol-eat-heck | Produits</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html">Pol-eat-heck</a>
+
+        <nav>
+            <a href="menus.html">Menus</a>
+            <a href="products.html">Produits</a>
+            <a href="cart.html" class="user-only">Panier</a>
+            <a href="account.html" class="user-only">Compte</a>
+            <a href="admin.html" class="admin-only">Administration</a>
+            <a href="login.html" class="guest-only">Connexion</a>
+            <button id="logout-btn" class="user-only">Déconnexion</button>
+        </nav>
+    </header>
+    <main>
+        <section class="admin-only">
+            <h2 id="form-title">Ajouter un produit</h2>
+            <form id="product-form">
+                <label for="product-name">Nom du produit</label>
+                <input type="text" id="product-name" maxlength="100" required>
+
+                <label for="product-description">Description (optionnelle)</label>
+                <input type="text" id="product-description">
+
+                <label for="product-price">Prix</label>
+                <input type="number" id="product-price" step="0.01" min="0" required>
+
+                <label for="product-quantity">Stock disponible</label>
+                <input type="number" id="product-quantity" min="0" required>
+
+                <label>
+                    <input type="checkbox" id="product-available" checked>
+                    Produit disponible à la vente
+                </label>
+
+                <button type="submit" id="form-submit-btn">Ajouter</button>
+                <button type="button" id="cancel-edit-btn" hidden>Annuler la modification</button>
+            </form>
+            <p id="product-form-error" class="error-msg"></p>
+        </section>
+
+        <section>
+            <h2>Produits disponibles</h2>
+            <p id="products-error" class="error-msg"></p>
+            <div id="products-list"></div>
+        </section>
+
+        <template id="product-template">
+            <article class="product-card">
+                <h3 class="product-name"></h3>
+                <p class="product-description"></p>
+                <p>Prix : <span class="product-price"></span> €</p>
+                <p class="product-stock"></p>
+
+                <button type="button" class="add-to-cart-btn user-only">Ajouter au panier</button>
+                <button type="button" class="edit-btn admin-only">Modifier</button>
+                <button type="button" class="delete-btn admin-only">Supprimer</button>
+            </article>
+        </template>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/products.js"></script>
+
+</body>
+
+</html>
