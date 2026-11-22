@@ -15,6 +15,12 @@
         <nav>
             <a href="menus.html">Menus</a>
             <a href="products.html">Produits</a>
+            <a href="cart.html" class="user-only">Panier</a>
+            <a href="commandes.html" class="user-only">Commandes</a>
+            <a href="account.html" class="user-only">Compte</a>
+            <a href="admin.html" class="admin-only">Administration</a>
+            <a href="login.html" class="guest-only">Connexion</a>
+            <button id="logout-btn" class="user-only">Déconnexion</button>
         </nav>
     </header>
     <main>
@@ -23,7 +29,6 @@
             <form id="login-form">
                 <label for="login-username">Nom d'utilisateur</label>
                 <input type="text" id="login-username" required>
-                <!-- the required attribute blocks the user from sending the form if the field isn't completed. not really secure beccause it can be removed w f12-->
 
                 <label for="login-password">Mot de passe</label>
                 <input type="password" id="login-password" required>
@@ -44,7 +49,8 @@
             <p id="register-error"></p>
 
             <div id="register-result" hidden>
-                <p>Le compte a correctement été créé. Vous pouvez vous connecter avec le mot de passe suivant (affiché seulement maintenant!) :</p>
+                <p>Le compte a correctement été créé. Vous pouvez vous connecter avec le mot de passe suivant (affiché
+                    seulement maintenant!) :</p>
                 <strong id="generated-password"></strong>
                 <!-- in the future : add copy button -->
             </div>
@@ -53,6 +59,7 @@
 
     <script src="js/api.js"></script>
     <script src="js/login.js"></script>
+    <script src="js/auth.js"></script>
 </body>
 
 </html>
