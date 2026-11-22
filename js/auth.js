@@ -35,6 +35,12 @@ function logout() {
   window.location.href = "login.html";
 }
 
+function requireAuth() {
+  if (localStorage.getItem("token") === null) {
+    window.location.href = "login.html";
+  }
+}
+
 updateUIByRole();
 
 const logoutBtn = document.getElementById("logout-btn");
