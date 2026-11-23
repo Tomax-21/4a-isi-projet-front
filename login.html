@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pol-eat-heck | Login</title>
+    <title>Pol-eat-heck | Connexion</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -16,7 +16,6 @@
             <a href="menus.html">Menus</a>
             <a href="products.html">Produits</a>
             <a href="cart.html" class="user-only">Panier</a>
-            <a href="commandes.html" class="user-only">Commandes</a>
             <a href="account.html" class="user-only">Compte</a>
             <a href="admin.html" class="admin-only">Administration</a>
             <a href="login.html" class="guest-only">Connexion</a>
@@ -35,7 +34,7 @@
 
                 <button type="submit">Se connecter</button>
             </form>
-            <p id="login-error"></p>
+            <p id="login-error" class="error-msg"></p>
         </section>
 
         <section>
@@ -46,9 +45,9 @@
 
                 <button type="submit">Créer un compte</button>
             </form>
-            <p id="register-error"></p>
+            <p id="register-error" class="error-msg"></p>
 
-            <div id="register-result" hidden>
+            <div id="register-result" class="success-msg" hidden>
                 <p>Le compte a correctement été créé. Vous pouvez vous connecter avec le mot de passe suivant (affiché
                     seulement maintenant!) :</p>
                 <strong id="generated-password"></strong>

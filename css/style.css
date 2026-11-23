@@ -54,15 +54,19 @@ button {
   border-radius: 6px;
 }
 
-#login-error, #register-error {
+.error-msg {
   color: #c0392b;
   font-weight: bold;
 }
 
-#register-result {
+.success-msg {
   margin-top: 1rem;
   padding: 1rem;
   background-color: #eafaf1;
   border: 1px solid #27ae60;
   border-radius: 6px;
+}
+
+.success-msg:empty {
+  display: none;
 }
