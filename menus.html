@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pol-eat-heck | Menus</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <header>
+        <a href="index.html">Pol-eat-heck</a>
+
+        <nav>
+            <a href="menus.html">Menus</a>
+            <a href="products.html">Produits</a>
+            <a href="cart.html" class="user-only">Panier</a>
+            <a href="account.html" class="user-only">Compte</a>
+            <a href="admin.html" class="admin-only">Administration</a>
+            <a href="login.html" class="guest-only">Connexion</a>
+            <button id="logout-btn" class="user-only">Déconnexion</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="admin-only">
+            <h2 id="form-title">Ajouter un menu</h2>
+            <form id="menu-form">
+                <label for="menu-name">Nom du menu</label>
+                <input type="text" id="menu-name" maxlength="100" required>
+
+                <label for="menu-description">Description (optionnelle)</label>
+                <input type="text" id="menu-description">
+
+                <label for="menu-price">Prix (€)</label>
+                <input type="number" id="menu-price" step="0.01" min="0" required>
+
+                <label for="menu-start-date">Date de début (laisser vide si permanent)</label>
+                <input type="date" id="menu-start-date">
+
+                <label for="menu-end-date">Date de fin (laisser vide si permanent)</label>
+                <input type="date" id="menu-end-date">
+
+                <p>Produits inclus dans le menu (au moins 1) :</p>
+                <div id="menu-products-checkboxes"></div>
+
+                <label>
+                    <input type="checkbox" id="menu-available" checked>
+                    Menu disponible à la vente
+                </label>
+
+                <button type="submit" id="form-submit-btn">Ajouter</button>
+                <button type="button" id="cancel-edit-btn" hidden>Annuler la modification</button>
+            </form>
+            <p id="menu-form-error" class="error-msg"></p>
+        </section>
+
+        <section>
+            <h2>Menus disponibles</h2>
+
+            <div>
+                <label for="filter-date">Filtrer par date :</label>
+                <input type="date" id="filter-date">
+                <button type="button" id="reset-filter-btn">Afficher tous les menus</button>
+            </div>
+
+            <p id="menus-error" class="error-msg"></p>
+            <div id="menus-list"></div>
+        </section>
+
+        <template id="menu-template">
+            <article class="card">
+                <h3 class="menu-name"></h3>
+                <p class="menu-description"></p>
+                <p>Contenu : <span class="menu-products"></span></p>
+                <p>Validité : <span class="menu-dates"></span></p>
+                <p>Prix : <span class="menu-price"></span> €</p>
+                <p class="menu-status"></p>
+
+                <button type="button" class="add-to-cart-btn user-only">Ajouter au panier</button>
+                <button type="button" class="edit-btn admin-only">Modifier</button>
+                <button type="button" class="delete-btn admin-only">Supprimer</button>
+            </article>
+        </template>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/menus.js"></script>
+
+</body>
+
+</html>
