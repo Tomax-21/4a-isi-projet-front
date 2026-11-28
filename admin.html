@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pol-eat-heck | Administration</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html">Pol-eat-heck</a>
+
+        <nav>
+            <a href="menus.html">Menus</a>
+            <a href="products.html">Produits</a>
+            <a href="cart.html" class="user-only">Panier</a>
+            <a href="account.html" class="user-only">Compte</a>
+            <a href="admin.html" class="admin-only">Administration</a>
+            <a href="login.html" class="guest-only">Connexion</a>
+            <button id="logout-btn" class="user-only">Déconnexion</button>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Administration</h1>
+
+        <section>
+            <h2>Jours de fermeture</h2>
+
+            <form id="closure-form">
+                <label for="closure-date">Date de fermeture</label>
+                <input type="date" id="closure-date" required>
+
+                <label for="closure-reason">Motif (optionnel)</label>
+                <input type="text" id="closure-reason">
+
+                <button type="submit">Ajouter la fermeture</button>
+            </form>
+            <p id="closure-form-error" class="error-msg"></p>
+
+            <h3>Fermetures enregistrées</h3>
+            <p id="closures-error" class="error-msg"></p>
+            <div id="closures-list"></div>
+        </section>
+
+        <section>
+            <h2>Gestion des utilisateurs</h2>
+            <p id="users-error" class="error-msg"></p>
+            <div id="users-list"></div>
+        </section>
+
+        <template id="closure-template">
+            <article class="card">
+                <p>Date : <span class="closure-date"></span></p>
+                <p class="closure-reason"></p>
+                <button type="button" class="delete-btn">Supprimer</button>
+            </article>
+        </template>
+
+        <template id="user-template">
+            <article class="card">
+                <p><strong>Utilisateur :</strong> <span class="user-username"></span> (<span class="user-role"></span>)
+                </p>
+                <p class="user-status"></p>
+                <button type="button" class="toggle-block-btn"></button>
+            </article>
+        </template>
+    </main>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>
